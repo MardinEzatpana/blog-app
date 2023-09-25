@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../../assets/images/logo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -11,9 +12,9 @@ const Navbar = () => {
         </p>
       </div>
       <div className="flex justify-around items-center">
-        <div>
+        <Link to="/">
           <img className="h-28 w-full" src={logo} alt="store"></img>
-        </div>
+        </Link>
         <div className="flex flex-row items-center">
           <div className="flex flex-row items-center">
             <svg
