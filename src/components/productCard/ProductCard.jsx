@@ -6,14 +6,18 @@ import {
   CardFooter,
   Typography,
 } from "@material-tailwind/react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { singleProduct } from "../../redux/slices/productsSlice";
 
-const ProductCard = ({ name, text, img, price, colors }) => {
+const ProductCard = ({ id, name, text, img, price, colors }) => {
+  const dispatch = useDispatch();
+  const { type } = useParams();
 
   return (
-    <Link to="#">
-      <Card className="w-80">
-        <CardHeader color="blue" className="relative h-96">
+    <Link to={`/products/${type}/` + id}>
+      <Card className="w-80" onClick={() => dispatch(singleProduct(id))}>
+        <CardHeader color="blue" className="relative h-80">
           <img src={img} alt="img-blur-shadow" className="h-full w-full" />
         </CardHeader>
         <CardBody className="text-center">

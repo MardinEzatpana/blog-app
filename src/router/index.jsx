@@ -3,6 +3,7 @@ import Layout from "../layout";
 import Home from "../pages/home/Home";
 import Login from "../pages/login/Login";
 import CatProducts from "../pages/catProducts/CatProducts";
+import CatSingleProduct from "../pages/catSingleProduct/CatSingleProduct";
 
 const router = createBrowserRouter([
     {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
         {
           path:"/products/:type",
           element: <CatProducts />,
+        },
+        {
+          path: "/products/:type/:id",
+          element: <CatSingleProduct />,
         },
       ],
     },
