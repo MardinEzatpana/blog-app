@@ -8,7 +8,7 @@ import {
 } from "@material-tailwind/react";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { singleProduct } from "../../redux/slices/productsSlice";
+import { singleProduct } from "../../../redux/slices/productsSlice";
 
 const ProductCard = ({ id, name, text, img, price, colors }) => {
   const dispatch = useDispatch();

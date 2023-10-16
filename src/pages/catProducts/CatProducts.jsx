@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import ProductCard from "../../components/productCard/ProductCard";
+import ProductCard from "../../components/categories/productCard/ProductCard";
 import {
   Menu,
   MenuHandler,
@@ -9,7 +9,7 @@ import {
   MenuItem,
   Button
 } from "@material-tailwind/react";
-import Error from "../../components/error/Error";
+import Error from "../../components/categories/error/Error";
 import {
   filterProducts,
   filterGender,
