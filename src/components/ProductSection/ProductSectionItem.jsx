@@ -28,15 +28,15 @@ const ProductSectionItem = ({
 
   return (
     <div>
-      <Card className="w-96 relative">
+      <Card className="w-80 relative">
         <Typography
           variant="h4"
           className="mb-2 absolute -rotate-45 top-12 right-8 z-10 text-red-700"
         >
           SALE%
         </Typography>
-        <CardHeader floated={false} className="h-96">
-          <img src={img} alt={name} />
+        <CardHeader floated={false} className="h-80">
+          <img src={img} alt={name} className="h-full w-full object-cover"/>
         </CardHeader>
         <CardBody className="text-center">
           <Typography variant="h4" color="blue-gray" className="mb-2">

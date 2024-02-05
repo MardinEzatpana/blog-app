@@ -55,7 +55,7 @@ export default function Login() {
             onChange={onChange}
           />
           <Input
-            label="Password"
+            label="Password Must Be Strong"
             size="lg"
             type="password"
             name="password"
@@ -63,7 +63,7 @@ export default function Login() {
             onChange={onChange}
           />
           <Input
-            label="Image URL address"
+            label="Image URL Is Optional"
             size="lg"
             type="text"
             name="image"
@@ -80,9 +80,6 @@ export default function Login() {
           >
             Sign In
           </Button>
-          <Typography variant="small" className="mt-6 flex justify-center">
-            Image is Optional
-          </Typography>
         </CardFooter>
       </Card>
     </div>

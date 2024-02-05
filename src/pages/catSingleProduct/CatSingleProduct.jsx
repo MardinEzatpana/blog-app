@@ -20,10 +20,10 @@ const CatSingleProduct = () => {
         .filter((product) => product.id === parseInt(id))
         .map((item, index) => {
           return (
-            <div key={index} className="flex justify-center items-center py-10">
-              <div className="pl-44 grow-[2]">
+            <div key={index} className="flex flex-col sm:flex-row gap-4 justify-center items-center p-10">
+              <div className="pl-0 md:pl-20 xl:pl-36 grow-[2]">
                 <img
-                  className="h-[850px] rounded-lg"
+                  className="h-[650px] rounded-lg object-cover"
                   src={item.img}
                   alt={item.name}
                 ></img>

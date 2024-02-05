@@ -43,8 +43,8 @@ const CatProducts = () => {
           <h1 className="text-gray-600 text-4xl font-inter font-bold tracking-normal leading-none">
             {type}
           </h1>
-          <div className="flex items-center justify-between py-8 ">
-            <div className="flex items-center">
+          <div className="flex items-center flex-wrap gap-2 justify-between py-8 ">
+            <div className="flex items-center flex-wrap gap-2">
               {genderButtons.map((item, index) => {
                 return (
                   <div key={index}>
@@ -141,7 +141,7 @@ const CatProducts = () => {
         {error ? (
           <Error></Error>
         ) : (
-          <div className="grid grid-cols-4 justify-items-center py-8 gap-12 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center py-8 gap-12 ">
             {products
               .filter((product) => product.type === type)
               .map((product, index) => {

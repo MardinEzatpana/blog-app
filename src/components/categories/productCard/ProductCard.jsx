@@ -18,7 +18,7 @@ const ProductCard = ({ id, name, text, img, price, colors }) => {
     <Link to={`/products/${type}/` + id}>
       <Card className="w-80" onClick={() => dispatch(singleProduct(id))}>
         <CardHeader color="blue" className="relative h-80">
-          <img src={img} alt="img-blur-shadow" className="h-full w-full" />
+          <img src={img} alt="img-blur-shadow" className="h-full w-full object-cover" />
         </CardHeader>
         <CardBody className="text-center">
           <Typography variant="h5" className="mb-2">

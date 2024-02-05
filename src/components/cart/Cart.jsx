@@ -22,6 +22,7 @@ const Cart = ({ openModal, setOpen, handleOpen }) => {
       {cart.length > 0 ? (
         <Fragment>
           <Dialog
+            size="xl"
             className="border-0 outline-0"
             open={openModal}
             handler={() => setOpen(false)}
@@ -57,12 +58,12 @@ const Cart = ({ openModal, setOpen, handleOpen }) => {
             
             <DialogBody
               divider
-              className="flex flex-col justify-center items-start"
+              className="overflow-y-scroll h-[65vh] flex flex-col justify-between items-center"
             >
               {cart.map((item, index) => {
                 return (
                   <div key={index}>
-                    <div className="grid grid-cols-2 py-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 py-10">
                       <div>
                         <img
                           className="h-[125px] rounded-md"

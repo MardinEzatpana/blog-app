@@ -21,10 +21,10 @@ const Categories = () => {
 
   return (
     <div>
-      <div className="flex items-center justify-center py-8">
+      <div className="flex items-center flex-wrap justify-center py-8">
         {buttons.map((button, index) => {
           return (
-            <div key={index} className="mr-4">
+            <div key={index} className="m-2">
               <Link to={"/products/" + button}>
                 <Button
                   color="gray"
@@ -48,7 +48,7 @@ const Categories = () => {
       </div>
       <div className="flex justify-center item-center py-4">
         <img
-          className="h-[600px] w-[70%] rounded-md shadow-lg shadow-gray-600"
+          className="h-[600px] w-[70%] rounded-md shadow-lg shadow-gray-600 object-cover"
           src={clothes}
           alt="clothes"
         ></img>

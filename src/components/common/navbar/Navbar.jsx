@@ -25,10 +25,10 @@ const Navbar = () => {
       </div>
       <div className="flex justify-around items-center">
           <Link to="/">
-          <img className="h-28 w-full" src={logo} alt="store"></img>
+          <img className="w-14 h-28 sm:w-full" src={logo} alt="store"></img>
           </Link>
-        <div className="flex flex-row items-center">
-          <div className="flex flex-row items-center">
+        <div className="flex flex-col-reverse sm:flex-row items-center">
+          <div className=" hidden md:flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -48,7 +48,7 @@ const Navbar = () => {
             </p>
           </div>
           <div
-            className="flex flex-row items-center cursor-pointer"
+            className="flex flex-row mt-2 sm:mt-0 items-center cursor-pointer"
             onClick={handleOpen}
           >
             {totalAmount > 0 ? (
@@ -71,10 +71,11 @@ const Navbar = () => {
                 />
               </svg>
             )}
-
+            <Tooltip content="Bag" placement="bottom">
             <p className=" font-inter text-base font-medium tracking-normal leading-none text-center ">
               Shopping
             </p>
+            </Tooltip>
             <div>
               {open && <Cart openModal={open} setOpen={setOpen} handleOpen={handleOpen}/>}
             </div>
@@ -88,22 +89,23 @@ const Navbar = () => {
                 className="mr-2 rounded-full "
               ></Avatar>
             )}
+            {name.charAt("0").toUpperCase() + name.slice(1)}
             <div onClick={() => dispatch(logout())}>
               <Tooltip content="Sign Out" placement="bottom">
-                <p className="font-inter text-sm font-medium tracking-normal leading-none">
-                  Hi {name.charAt("0").toUpperCase() + name.slice(1)}
+                <p className="font-inter ml-2 hover:text-red-400 text-sm font-medium tracking-normal leading-none">
+                   Log Out
                 </p>
               </Tooltip>
             </div>
           </div>
         </div>
       </div>
-      <div className="bg-black p-4 w-full flex items-center justify-center mx-auto">
-        <p className="text-white font-inter text-base font-medium ">50& OFF</p>
-        <p className="text-white font-inter text-base font-medium mx-96">
+      <div className="bg-black p-4 w-full flex items-center justify-around mx-auto">
+        <p className="text-white w-48 font-inter text-base font-medium ">50& OFF</p>
+        <p className=" text-white font-inter text-base font-medium ">
           Free shipping and returns
         </p>
-        <p className="text-white font-inter text-base font-medium ">
+        <p className="hidden lg:flex text-white font-inter text-base font-medium ">
           Diffrent payment methods
         </p>
       </div>
