@@ -7,10 +7,10 @@ import {
   DialogFooter,
   Typography,
   IconButton,
-  Tooltip
+  Tooltip,
 } from "@material-tailwind/react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeFromCart } from "../../redux/slices/cartSlice";
+import { removeFromCart, resetCart } from "../../redux/slices/cartSlice";
 
 const Cart = ({ openModal, setOpen, handleOpen }) => {
   const cart = useSelector((state) => state.cart.cart);
@@ -32,30 +32,32 @@ const Cart = ({ openModal, setOpen, handleOpen }) => {
             }}
           >
             <DialogHeader className="justify-between">
-            <Typography variant="h5" color="blue-gray">Shopping Bag</Typography>
-            <IconButton
-            color="blue-gray"
-            size="sm"
-            variant="text"
-            onClick={handleOpen}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-              className="h-5 w-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </IconButton>
+              <Typography variant="h5" color="blue-gray">
+                Shopping Bag
+              </Typography>
+              <IconButton
+                color="blue-gray"
+                size="sm"
+                variant="text"
+                onClick={handleOpen}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  className="h-5 w-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </IconButton>
             </DialogHeader>
-            
+
             <DialogBody
               divider
               className="overflow-y-scroll h-[65vh] flex flex-col justify-between items-center"
@@ -125,6 +127,12 @@ const Cart = ({ openModal, setOpen, handleOpen }) => {
                   </div>
                 );
               })}
+              <button
+                onClick={() => dispatch(resetCart())}
+                className="py-2 px-10 bg-red-500 text-white font-semibold uppercase mb-4 hover:bg-red-700 duration-300"
+              >
+                Reset cart
+              </button>
             </DialogBody>
             <DialogFooter className="flex justify-start items-center">
               <p className="text-black text-base font-inter tracking-normal leading-none pt-2">
@@ -146,28 +154,30 @@ const Cart = ({ openModal, setOpen, handleOpen }) => {
             }}
           >
             <DialogHeader className="justify-between">
-            <Typography variant="h5" color="blue-gray">Shopping Bag</Typography>
-            <IconButton
-            color="blue-gray"
-            size="sm"
-            variant="text"
-            onClick={handleOpen}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-              className="h-5 w-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </IconButton>
+              <Typography variant="h5" color="blue-gray">
+                Shopping Bag
+              </Typography>
+              <IconButton
+                color="blue-gray"
+                size="sm"
+                variant="text"
+                onClick={handleOpen}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  className="h-5 w-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </IconButton>
             </DialogHeader>
             <DialogBody divider>
               <div>

@@ -17,6 +17,15 @@ const ProtectedRoute = ({ children }) => {
   return <Navigate to="/login" />;
 };
 
+const ProtectedRoute1 = ({ children }) => {
+  const user = useSelector((state) => state.user.user);
+  const { authUser } = user;
+  if (!authUser) {
+    return children;
+  }
+  return <Navigate to="/" />;
+};
+
 const router = createBrowserRouter([
     {
       path: "/",
@@ -42,7 +51,11 @@ const router = createBrowserRouter([
     },
     {
         path: "/login",
-        element: <Login />,
+        element:(
+          <ProtectedRoute1>
+            <Login />
+          </ProtectedRoute1>
+        ),
       },
   ]);
   export default router;
